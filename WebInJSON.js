@@ -31,3 +31,14 @@ function addElement (child, parent) {
         addElement(element, parentId);
     });
 }
+
+function HTMLtoJSON (html) {
+    var json = {};
+    var htmlBlock = html;
+
+    $(htmlBlock).children().each(function (index) {
+        console.log('child ' + index + ' = ' + this);
+    });
+
+    return json;
+}
