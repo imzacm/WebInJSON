@@ -17,6 +17,7 @@ function addElement (child, parent) {
     if (child.style) childElement += 'style="' + style + '" ';
     if (child.href) childElement += 'href="' + child.href + '" ';
     if (child.src) childElement += 'src="' + child.src + '" ';
+    if (child.class) childElement += 'class="' + child.class + '" ';
     if (child.width) childElement += 'width="' + child.width + '" ';
     if (child.height) childElement += 'height="' + child.height + '" ';
     childElement += '>';
