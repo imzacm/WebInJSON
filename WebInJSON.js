@@ -13,8 +13,12 @@ function addElement (child, parent) {
         child.style = style;
     }
 
-    var childElement = '<' + child.type + ' id="' + elementCount + '"';
-    if (child.style) childElement += ' style="' + style + '"';
+    var childElement = '<' + child.type + ' id="' + elementCount + '" ';
+    if (child.style) childElement += 'style="' + style + '" ';
+    if (child.href) childElement += 'href="' + child.href + '" ';
+    if (child.src) childElement += 'src="' + child.src + '" ';
+    if (child.width) childElement += 'width="' + child.width + '" ';
+    if (child.height) childElement += 'height="' + child.height + '" ';
     childElement += '>';
     if (child.text) childElement += child.text;
     childElement += '</' + child.type + '>';
