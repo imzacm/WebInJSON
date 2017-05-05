@@ -29,6 +29,8 @@ function addElement (child, parent) {
     childElement += '>';
     if (child.text) childElement += child.text;
     childElement += '</' + child.type + '>';
+
+    console.log('childElement = ' + childElement);
             
     $(parent).append(childElement);
 
