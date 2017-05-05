@@ -36,8 +36,10 @@ function HTMLtoJSON (html) {
     var json = {};
     var htmlBlock = html;
 
+    console.log(htmlBlock);
+
     $(htmlBlock).children().each(function (index) {
-        console.log('child ' + index + ' = ' + this);
+        console.log('child ' + index + ' = ' + $(this));
     });
 
     return json;
