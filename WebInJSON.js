@@ -14,7 +14,7 @@ function addElement (child, parent) {
     }
 
     var childElement;
-    if (child.id && !child.contents) {
+    if (child.id) {
         childElement = '<' + child.type + ' id="' + child.id + '" ';
     }
     else {
@@ -32,7 +32,12 @@ function addElement (child, parent) {
             
     $(parent).append(childElement);
 
-    var parentId = $('#' + elementCount);
+    if (child.id) {
+        var parentId = $('#' + child.id);
+    }
+    else {
+        var parentId = $('#' + elementCount);
+    }
     if (child.contents) child.contents.forEach (function(element) {
         addElement(element, parentId);
     });
