@@ -13,7 +13,13 @@ function addElement (child, parent) {
         child.style = style;
     }
 
-    var childElement = '<' + child.type + ' id="' + elementCount + '" ';
+    var childElement;
+    if (child.id && !child.contents) {
+        childElement = '<' + child.type + ' id="' + child.id + '" ';
+    }
+    else {
+        childElement = '<' + child.type + ' id="' + elementCount + '" ';
+    }
     if (child.style) childElement += 'style="' + style + '" ';
     if (child.href) childElement += 'href="' + child.href + '" ';
     if (child.src) childElement += 'src="' + child.src + '" ';
